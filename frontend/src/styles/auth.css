@@ -1,0 +1,231 @@
+:root{
+  --bg0:#070b14;
+  --bg1:#0b1530;
+  --card:#0d1a33cc;
+  --stroke:#1d2f55;
+  --txt:#e9f0ff;
+  --muted:#9fb1d6;
+  --accent:#58d0ff;
+  --accent2:#7c5cff;
+  --danger:#ff5c7a;
+}
+
+.auth-bg{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(1200px 600px at 50% 10%, rgba(124,92,255,.20), transparent 55%),
+    radial-gradient(900px 500px at 15% 65%, rgba(88,208,255,.18), transparent 60%),
+    radial-gradient(900px 500px at 85% 70%, rgba(88,208,255,.10), transparent 65%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  color:var(--txt);
+  padding:32px 16px;
+}
+
+.auth-shell{
+  width:min(520px, 100%);}
+
+.auth-card{
+  border:1px solid rgba(29,47,85,.65);
+  background: linear-gradient(180deg, rgba(13,26,51,.85), rgba(10,18,36,.65));
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:22px 22px 18px;
+  backdrop-filter: blur(10px);
+}
+
+.auth-logo{
+  display:flex;
+  justify-content:center;
+  margin-bottom:10px;
+}
+
+.auth-logo img{
+  width:140px;
+  height:auto;
+  border-radius:18px;
+  border:1px solid rgba(29,47,85,.65);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  background:#0b1326;
+}
+
+.auth-title{
+  margin:6px 0 0;
+  text-align:center;
+  font-size:22px;
+  letter-spacing:.3px;
+}
+
+.auth-subtitle{
+  margin:6px 0 14px;
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.auth-error{
+  background: rgba(255,92,122,.12);
+  border:1px solid rgba(255,92,122,.35);
+  color:#ffd0da;
+  padding:10px 12px;
+  border-radius:12px;
+  margin-bottom:12px;
+  font-size:13px;
+}
+
+.auth-form{
+  display:grid;
+  gap:12px;
+}
+
+.auth-label{
+  display:grid;
+  gap:7px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.auth-input{
+  height:44px;
+  border-radius:12px;
+  border:1px solid rgba(29,47,85,.75);
+  background: rgba(7,11,20,.55);
+  color:var(--txt);
+  padding:0 12px;
+  outline:none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.auth-input:focus{
+  border-color: rgba(88,208,255,.55);
+  box-shadow: 0 0 0 3px rgba(88,208,255,.12);
+}
+
+.auth-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:2px;
+}
+
+.auth-check{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  color:var(--muted);
+  font-size:13px;
+  user-select:none;
+}
+
+.auth-check input{
+  width:16px;
+  height:16px;
+  accent-color: var(--accent);
+}
+
+.auth-linkbtn{
+  background: transparent;
+  border:none;
+  color: var(--accent);
+  cursor:pointer;
+  font-size:13px;
+  padding:6px 0;
+}
+
+.auth-linkbtn:hover{
+  text-decoration: underline;
+}
+
+.auth-btn{
+  height:46px;
+  border-radius:12px;
+  border:1px solid rgba(29,47,85,.75);
+  cursor:pointer;
+  color:#07111f;
+  font-weight:700;
+  letter-spacing:.2px;
+  background:
+    linear-gradient(90deg, rgba(88,208,255,1), rgba(124,92,255,1));
+  box-shadow: 0 16px 35px rgba(0,0,0,.35);
+  transition: transform .08s ease, filter .15s ease;
+}
+
+.auth-btn:active{
+  transform: translateY(1px);
+}
+
+.auth-btn:disabled{
+  opacity:.75;
+  cursor:not-allowed;
+  filter: grayscale(.2);
+}
+
+.auth-footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  margin-top:10px;
+}
+
+.auth-footer a{
+  color: var(--accent);
+  text-decoration:none;
+}
+
+.auth-footer a:hover{
+  text-decoration: underline;
+}
+
+.auth-hint{
+  text-align:center;
+  color:rgba(159,177,214,.75);
+  font-size:12px;
+}
+.auth-help{
+  margin-top:6px;
+  font-size:12px;
+  color:rgba(159,177,214,.75);
+}
+
+.auth-link{
+  color: var(--accent);
+  text-decoration:none;
+  font-size:13px;
+}
+.auth-link:hover{ text-decoration: underline; }
+
+.auth-success{
+  margin-top:10px;
+  font-size:13px;
+  color: #c8fff0;
+  background: rgba(88,208,255,.10);
+  border:1px solid rgba(88,208,255,.25);
+  padding:10px 12px;
+  border-radius:12px;
+}
+
+/* ✅ Fix για dropdown/select στο dark mode (αυτό που σου “βγαίνει άσπρο”) */
+.auth-select{
+  height:44px;
+  border-radius:12px;
+  border:1px solid rgba(29,47,85,.75);
+  background: rgba(7,11,20,.55);
+  color: var(--txt);
+  padding:0 12px;
+  outline:none;
+}
+
+.auth-select:focus{
+  border-color: rgba(88,208,255,.55);
+  box-shadow: 0 0 0 3px rgba(88,208,255,.12);
+}
+
+/* options: το dropdown menu ίδιο dark */
+.auth-select option{
+  background: #0b1326;
+  color: var(--txt);
+}

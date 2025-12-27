@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 export default function App() {
   return (
     <BrowserRouter>
-      <div style={{ maxWidth: 900, margin: "12px auto", fontFamily: "sans-serif" }}>
+      <div style={{ width: "100%", maxWidth: 1400, margin: "0 auto", padding: 16, fontFamily: "sans-serif" }}>
         <nav style={{ display: "flex", gap: 12, padding: "12px 0" }}>
           <Link to="/signup">Signup</Link>
           <Link to="/login">Login</Link>
