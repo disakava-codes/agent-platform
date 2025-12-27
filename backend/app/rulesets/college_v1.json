@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "org_type": "college",
+  "rules": [
+    {
+      "id": "ISSUE_CERTIFICATE",
+      "intent": "ISSUE_CERTIFICATE",
+      "match_any": ["βεβαίωση", "πιστοποιητικό"],
+      "match_all": ["φοίτησης"],
+      "answer": "Για βεβαίωση φοίτησης:\n1) Ελέγχεις ότι ο φοιτητής είναι ενεργός.\n2) Ελέγχεις οικονομική ενημερότητα (αν απαιτείται).\n3) Εκδίδεις τη βεβαίωση από το σύστημα.\n4) Την παραδίδεις/στέλνεις με email.\n",
+      "actions": ["check_student_status", "check_financial_clearance", "generate_certificate", "send_certificate"],
+      "confidence": 0.95
+    },
+    {
+      "id": "ABSENCES_INFO",
+      "intent": "ABSENCES_INFO",
+      "match_any": ["απουσ"],
+      "match_all": [],
+      "answer": "Για ενημέρωση απουσιών:\n1) Αναζητάς τον φοιτητή.\n2) Ελέγχεις τις καταχωρημένες απουσίες ανά μάθημα.\n3) Ενημερώνεις για όρια/συνέπειες σύμφωνα με τον κανονισμό.\n",
+      "actions": ["get_absences", "check_absence_limits"],
+      "confidence": 0.9
+    },
+    {
+      "id": "CHANGE_CLASS",
+      "intent": "CHANGE_CLASS",
+      "match_any": ["αλλαγή", "μεταφορά"],
+      "match_all": ["τμήματος"],
+      "answer": "Για αλλαγή τμήματος:\n1) Καταγράφεις αίτημα + λόγο αλλαγής.\n2) Ελέγχεις διαθεσιμότητα στο νέο τμήμα.\n3) Ζητάς έγκριση τομεάρχη/διευθυντή (αν απαιτείται).\n4) Ενημερώνεις τον φοιτητή για την ολοκλήρωση.\n",
+      "actions": ["collect_change_request", "check_class_availability", "request_approval", "notify_student"],
+      "confidence": 0.85
+    },
+    {
+      "id": "FINANCIAL_CLEARANCE",
+      "intent": "FINANCIAL_CLEARANCE",
+      "match_any": ["οικονομ", "δόσεις", "πληρωμή", "ενημερότητα"],
+      "match_all": [],
+      "answer": "Για οικονομική ενημερότητα:\n1) Ελέγχεις τις οφειλές/δόσεις.\n2) Αν υπάρχουν οφειλές, ενημερώνεις για τρόπο εξόφλησης.\n3) Αν είναι ενήμερος, καταγράφεις ότι μπορεί να προχωρήσει το αίτημα.\n",
+      "actions": ["get_financial_status"],
+      "confidence": 0.88
+    },
+    {
+      "id": "DAILY_REPORT",
+      "intent": "DAILY_REPORT",
+      "match_any": ["report", "αναφορά", "ημερήσιο"],
+      "match_all": [],
+      "answer": "Για ημερήσιο report:\n1) Συγκεντρώνεις συμβάντα ημέρας (απουσίες/αιτήματα/εκκρεμότητες).\n2) Συμπληρώνεις το template report.\n3) Το προωθείς για έγκριση.\n4) Μετά την έγκριση, αποστέλλεται στη διοίκηση.\n",
+      "actions": ["collect_daily_events", "fill_report_template", "request_approval", "send_report"],
+      "confidence": 0.8
+    }
+  ]
+}
